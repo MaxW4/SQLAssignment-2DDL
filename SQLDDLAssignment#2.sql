@@ -17,5 +17,9 @@ VALUES
     ('AAPL', 100, '2023-09-07', 175.18, 195.84),
     ('AMZN', 150, '2023-09-07', 133.90, 147.42),
     ('TSLA', 150, '2023-09-07', 245.00, 243.84);
-    
+
+
+
 select company_name, tbl_current_portfolio.stock_ticker, number_of_shares, current_price from tbl_company, tbl_current_portfolio where tbl_company.stock_ticker= tbl_current_portfolio.stock_ticker;
+
+select company_name as "Company Name", tbl_current_portfolio.stock_ticker as "Stock Ticker", number_of_shares as "Number of Shares", CONCAT('Current Value', FORMAT(number_of_shares * current_price, 2)) AS "Value" from tbl_company, tbl_current_portfolio where tbl_company.stock_ticker= tbl_current_portfolio.stock_ticker;
